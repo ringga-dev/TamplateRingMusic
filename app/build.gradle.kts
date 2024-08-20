@@ -59,4 +59,13 @@ dependencies {
 
     val lifecycle_version = "2.8.4"
     implementation("androidx.lifecycle:lifecycle-viewmodel-compose:$lifecycle_version")
+
+    val lottieVersion = "5.2.0"
+    implementation("com.airbnb.android:lottie-compose:$lottieVersion")
+
+//    //Log
+//    implementation(libs.timber)
+
+    //coil
+    implementation("io.coil-kt:coil-compose:2.6.0")
 }

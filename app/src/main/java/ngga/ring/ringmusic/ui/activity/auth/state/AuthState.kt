@@ -10,7 +10,8 @@ sealed class AuthScreenState {
 }
 
 sealed class AuthUiState<out T> {
-    object Loading : AuthUiState<Nothing>()
+    data object Initial : AuthUiState<Nothing>()
+    data object Loading : AuthUiState<Nothing>()
     data class Success<T>(val data: T) : AuthUiState<T>()
     data class Error(val message: String) : AuthUiState<Nothing>()
 }

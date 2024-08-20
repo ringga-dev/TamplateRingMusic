@@ -16,7 +16,7 @@ class AuthViewModel :ViewModel() {
     private val _screenState = mutableStateOf<AuthScreenState>(AuthScreenState.LoginScreen)
     val screenState: State<AuthScreenState> = _screenState
 
-    private val _authUiState = MutableStateFlow<AuthUiState<Any>>(AuthUiState.Loading)
+    private val _authUiState = MutableStateFlow<AuthUiState<Any>>(AuthUiState.Initial)
     val authUiState: StateFlow<AuthUiState<Any>> = _authUiState
 
     fun navigateTo(screenState: AuthScreenState) {
