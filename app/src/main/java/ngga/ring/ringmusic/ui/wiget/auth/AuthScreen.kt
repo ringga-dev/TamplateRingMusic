@@ -63,6 +63,8 @@ class AuthScreen {
             is AuthScreenState.GoogleLoginScreen -> {
                 GoogleLoginPageScreen(viewModel)
             }
+
+            else -> {}
         }
     }
 
@@ -225,12 +227,60 @@ class AuthScreen {
                     Text("Sing in")
                 }
 
-                Spacer(modifier = Modifier.height(6.dp))
-                Text("Sing Up", modifier = Modifier
-                    .align(Alignment.End)
-                    .clickable {
+                Button(
+                    onClick = {
                         viewModel.navigateTo(AuthScreenState.RegisterScreen)
-                    })
+                    },
+                    modifier = Modifier.fillMaxWidth(),
+                    colors =ButtonDefaults.buttonColors(containerColor = MaterialTheme.colorScheme.tertiary)
+                ) {
+                    Text("Sing Up", color = MaterialTheme.colorScheme.onPrimary)
+
+                }
+
+                Button(
+                    onClick = {
+                        viewModel.navigateTo(AuthScreenState.ForgotPasswordScreen)
+                    },
+                    modifier = Modifier.fillMaxWidth(),
+                    colors =ButtonDefaults.buttonColors(containerColor = MaterialTheme.colorScheme.tertiary)
+                ) {
+                    Text("Forgot Password", color = MaterialTheme.colorScheme.onPrimary)
+
+                }
+
+                Button(
+                    onClick = {
+                        viewModel.navigateTo(AuthScreenState.VerifyEmailScreen)
+                    },
+                    modifier = Modifier.fillMaxWidth(),
+                    colors =ButtonDefaults.buttonColors(containerColor = MaterialTheme.colorScheme.tertiary)
+                ) {
+                    Text("Verify Email", color = MaterialTheme.colorScheme.onPrimary)
+
+                }
+                Button(
+                    onClick = {
+                        viewModel.navigateTo(AuthScreenState.ResetPasswordScreen)
+                    },
+                    modifier = Modifier.fillMaxWidth(),
+                    colors =ButtonDefaults.buttonColors(containerColor = MaterialTheme.colorScheme.tertiary)
+                ) {
+                    Text("Reset Password", color = MaterialTheme.colorScheme.onPrimary)
+
+                }
+                Button(
+                    onClick = {
+                        viewModel.navigateTo(AuthScreenState.GoogleLoginScreen)
+                    },
+                    modifier = Modifier.fillMaxWidth(),
+                    colors =ButtonDefaults.buttonColors(containerColor = MaterialTheme.colorScheme.tertiary)
+                ) {
+                    Text("Google Login", color = MaterialTheme.colorScheme.onPrimary)
+
+                }
+
+
             }
         }
 
@@ -278,7 +328,7 @@ class AuthScreen {
                                             end = 16.dp
                                         ),
                                         text = buildAnnotatedString {
-                                            append("Welcome to ")
+                                            append("Register to ")
 
                                             // Gaya untuk "Ring"
                                             pushStyle(
@@ -404,12 +454,16 @@ class AuthScreen {
                     Text("Sing Up")
                 }
 
-                Spacer(modifier = Modifier.height(6.dp))
-                Text("Sing In", modifier = Modifier
-                    .align(Alignment.End)
-                    .clickable {
+                Button(
+                    onClick = {
                         viewModel.navigateTo(AuthScreenState.LoginScreen)
-                    })
+                    },
+                    modifier = Modifier.fillMaxWidth(),
+                    colors =ButtonDefaults.buttonColors(containerColor = MaterialTheme.colorScheme.tertiary)
+                ) {
+                    Text("Sing In", color = MaterialTheme.colorScheme.onPrimary)
+
+                }
 
 
             }
